@@ -20,7 +20,11 @@ export default function useNotifications(api, onNotification) {
           const data = await api.receiveNotification(controller.signal)
           if (!data) continue
 
-          handlerRef.current(data.body)
+          try {
+            handlerRef.current(data.body)
+          } catch (error) {
+            console.error('Не удалось обработать уведомление', data.body, error)
+          }
           await api.deleteNotification(data.receiptId)
         } catch (error) {
           if (axios.isCancel(error)) return
