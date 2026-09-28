@@ -2,6 +2,8 @@
 
 Тестовое задание «Фронтенд разработчик React»: веб-чат для отправки и получения текстовых сообщений в MAX через [GREEN-API](https://green-api.com/max). Интерфейс сделан по мотивам [web.max.ru](https://web.max.ru/).
 
+**Демо:** https://kadykovvlad.github.io/Green-Api/
+
 ## Возможности
 
 - Вход по `idInstance` и `apiTokenInstance` (перед входом проверяется, что инстанс авторизован)
