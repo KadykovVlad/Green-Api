@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Хост берём из ЛК; если не указан — собираем по первым 4 цифрам idInstance
 export const getDefaultApiUrl = (idInstance) =>
-  `https://${String(idInstance).slice(0, 4)}.api.green-api.com`
+  `https://${String(idInstance).slice(0, 4)}.api.greenapi.com`
 
 const createClient = ({ apiUrl, idInstance, apiTokenInstance }) => {
   const base = `${apiUrl || getDefaultApiUrl(idInstance)}/waInstance${idInstance}`

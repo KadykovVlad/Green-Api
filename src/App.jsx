@@ -72,15 +72,19 @@ function Messenger({ credentials, onLogout }) {
     if (body?.typeWebhook !== 'incomingMessageReceived') return
 
     const { senderData, messageData, idMessage, timestamp } = body
-    if (senderData.chatType === 'group') return
+    // Группы пропускаем: в MAX id группы отрицательный, в WhatsApp — @g.us
+    if (senderData.chatType === 'group' || senderData.chatId.endsWith('@g.us')) return
 
     const text =
       messageData.textMessageData?.textMessage ??
       messageData.extendedTextMessageData?.text
     if (!text) return
 
-    // В MAX chatId — внутренний id пользователя, поэтому сопоставляем чат по номеру
-    const phone = senderData.senderPhoneNumber && String(senderData.senderPhoneNumber)
+    // В MAX chatId — внутренний id пользователя, номер лежит в senderPhoneNumber.
+    // В WhatsApp номер зашит в сам chatId: 79991234567@c.us
+    const phone = senderData.senderPhoneNumber
+      ? String(senderData.senderPhoneNumber)
+      : senderData.chatId.match(/^(\d+)@c\.us$/)?.[1]
     addMessage(
       {
         id: phone ?? senderData.chatId,
