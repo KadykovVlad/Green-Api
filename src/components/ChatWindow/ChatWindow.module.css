@@ -1,0 +1,61 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  background: var(--color-chat-bg);
+}
+
+.placeholder {
+  align-items: center;
+  justify-content: center;
+}
+
+.hint {
+  margin: auto;
+  padding: 6px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--header-height);
+  flex-shrink: 0;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.phone {
+  font-size: 13px;
+  color: var(--color-text-faint);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+/* Прижимаем сообщения к низу, как в мессенджерах */
+.messages > :first-child {
+  margin-top: auto;
+}

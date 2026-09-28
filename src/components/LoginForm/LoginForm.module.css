@@ -1,0 +1,67 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 16px;
+  background: var(--color-chat-bg);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.label input {
+  color: var(--color-text);
+}
+
+.error {
+  font-size: 13px;
+  color: var(--color-danger);
+}
+
+.submit {
+  height: 44px;
+  margin-top: 6px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  transition: background var(--transition);
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}

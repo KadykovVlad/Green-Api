@@ -1,0 +1,30 @@
+.bubble {
+  max-width: min(520px, 75%);
+  padding: 8px 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.in {
+  align-self: flex-start;
+  border-radius: 16px 16px 16px 4px;
+  background: var(--bubble-in);
+}
+
+.out {
+  align-self: flex-end;
+  border-radius: 16px 16px 4px 16px;
+  background: var(--bubble-out);
+}
+
+/* Переносы строк из сообщения сохраняем */
+.text {
+  white-space: pre-wrap;
+}
+
+.time {
+  float: right;
+  margin: 6px 0 -4px 10px;
+  font-size: 11px;
+  color: var(--color-text-faint);
+}

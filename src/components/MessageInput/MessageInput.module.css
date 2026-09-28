@@ -1,0 +1,29 @@
+.form {
+  flex-shrink: 0;
+  padding: 12px 20px 16px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 22px;
+  background: var(--color-bg);
+}
+
+.send {
+  border-radius: 50%;
+}
+
+.error {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--color-danger);
+}
